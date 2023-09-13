@@ -9,17 +9,17 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "default" {
-  name     = "firewallpolicycollection-sample-rg"
+  name     = "firewallpolicycollection-example-rg"
   location = local.location
 }
 
 module "firewall-policy" {
-  source              = "../../firewall-policy"
+  source              = "jsathler/firewall-policy/azurerm"
   location            = azurerm_resource_group.default.location
   resource_group_name = azurerm_resource_group.default.name
 
   firewall_policy = {
-    name = "sample"
+    name = "example"
   }
 }
 
