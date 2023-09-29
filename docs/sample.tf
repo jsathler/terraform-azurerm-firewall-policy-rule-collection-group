@@ -1,20 +1,5 @@
-# Azure Firewall Policy rule collection group Terraform module
-
-Terraform module which creates Azure Firewall Policy rule collection groups on Azure.
-
-These types of resources are supported:
-
-* [Azure Firewall Policy rule sets](https://learn.microsoft.com/en-us/azure/firewall/policy-rule-sets)
-
-## Terraform versions
-
-Terraform 1.5.6 and newer.
-
-## Usage
-
-```hcl
 module "firewall-policy-global-rules" {
-  source              = "jsathler/firewall-policy-rule-collection-group/azurerm"
+  source             = "jsathler/firewall-policy-rule-collection-group/azurerm"
   name               = "global-rules"
   firewall_policy_id = module.firewall-policy.policy_id
   priority           = 100
@@ -52,6 +37,3 @@ module "firewall-policy-global-rules" {
     }
   }
 }
-```
-
-More samples in examples folder
